@@ -16,7 +16,7 @@ public class ReviewCsvDao {
 
     public List<ReviewCsvRow> findAll() {
         List<List<String>> rows = CsvReader.readAll(fileName);
-        return rows.stream().map(row -> toPojo(row)).collect(Collectors.toList());
+        return rows.stream().map(this::toPojo).collect(Collectors.toList());
     }
 
     private ReviewCsvRow toPojo(List<String> row) {

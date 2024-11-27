@@ -9,7 +9,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class MainE2ETest {
-    private static String outputFilePath = "src/test/resources/" + Main.OUTPUT_FILE_NAME;
+    private static final String outputFilePath = "src/test/resources/" + Main.OUTPUT_FILE_NAME;
     private static List<List<String>> csvData;
 
     @BeforeAll

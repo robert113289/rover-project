@@ -29,7 +29,7 @@ public class SitterService {
 
 
     public void save(List<Sitter> sitters) {
-        sitters.stream().forEach(sitterDao::save);
+        sitters.forEach(sitterDao::save);
     }
 }
 

@@ -26,16 +26,17 @@ public class ReviewCsvDaoTest {
                         "ownerPhoneNumber2", "ownerEmail2", 20)
         );
 
-        List<ReviewCsvRow> reviews = new ReviewCsvDao(TEST_FILE).findAll();
+        ReviewCsvDao reviewCsvDao = new ReviewCsvDao(TEST_FILE);
+        List<ReviewCsvRow> reviews = reviewCsvDao.findAll();
 
         assertThat(reviews).isEqualTo(expectedReviews);
     }
 
     @Test
     void whenCsvFileHasInvalidData_thenThrowsIllegalArgumentException() {
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            new ReviewCsvDao(TEST_FILE_INVALID).findAll();
-        });
+        ReviewCsvDao reviewCsvDao = new ReviewCsvDao(TEST_FILE_INVALID);
+        Exception exception = assertThrows(IllegalArgumentException.class,
+                () -> reviewCsvDao.findAll());
 
         String expectedMessage = "Invalid CSV row data:";
         String actualMessage = exception.getMessage();

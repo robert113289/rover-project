@@ -7,7 +7,6 @@ public class Sitter {
     private final String name;
     private final String email;
     private final List<Review> reviews;
-    ;
     private double profileScore;
     private double ratingsScore;
     private double searchScore;

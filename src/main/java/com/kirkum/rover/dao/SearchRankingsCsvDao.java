@@ -18,13 +18,13 @@ public class SearchRankingsCsvDao {
 
         List<String> rows = sitters.
                 stream()
-                .map(sitter -> toCsvString(sitter))
+                .map(this::toCsvString)
                 .collect(Collectors.toList());
 
         CsvWriter.writeToCsv(fileName, header, rows);
     }
 
-    private static String toCsvString(Sitter sitter) {
+    private String toCsvString(Sitter sitter) {
         return String.join(",",
                 sitter.getEmail(),
                 sitter.getName(),

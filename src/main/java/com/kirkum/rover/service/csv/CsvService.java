@@ -9,7 +9,7 @@ import java.util.List;
 
 public class CsvService {
     private final ReviewCsvDao reviewCsvDao;
-    private SearchRankingsCsvDao searchRankingsCsvDao;
+    private final SearchRankingsCsvDao searchRankingsCsvDao;
 
     public CsvService(ReviewCsvDao reviewCsvDao, SearchRankingsCsvDao searchRankingsCsvDao) {
         this.searchRankingsCsvDao = searchRankingsCsvDao;

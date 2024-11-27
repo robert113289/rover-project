@@ -61,7 +61,6 @@ public class CsvServiceTest {
 
     @Test
     void whenExportSittersToCsv_thenWritesSearchRankingCsv() throws IOException {
-        String fileName = TEST_FILE;
         Sitter sitterOne = new Sitter("Sitter One", "sitter1@example.com");
         sitterOne.setProfileScore(4.5);
         sitterOne.setRatingsScore(4.8);
@@ -79,7 +78,7 @@ public class CsvServiceTest {
         String expectedHeader = "email,name,profile_score,ratings_score,search_score";
         List<String> expectedRows = Arrays.asList("sitter1@example.com,Sitter One,4.50,4.80,4.90",
                 "sitter2@example.com,Sitter Two,4.00,4.30,4.20");
-        List<String> lines = Files.readAllLines(Path.of(fileName));
+        List<String> lines = Files.readAllLines(Path.of(TEST_FILE));
         assertThat(lines).isNotNull();
         assertThat(lines).hasSize(3);
         assertThat(lines.get(0)).isEqualTo(expectedHeader);

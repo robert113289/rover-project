@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class CsvReaderTest {
 
     @Test
-    void whenCsvFileIsValid_thenReadAllReturnsCorrectDataAndSkipsHeader() throws Exception {
+    void whenCsvFileIsValid_thenReadAllReturnsCorrectDataAndSkipsHeader() {
         String fileName = "test.csv";
         List<List<String>> result = CsvReader.readAll(fileName);
         assertThat(result).isNotNull();
@@ -22,9 +22,7 @@ public class CsvReaderTest {
     @Test
     void whenCsvFileNotFound_thenThrowsRuntimeExceptionWithCause() {
         String fileName = "nonexistent.csv";
-        Exception exception = assertThrows(RuntimeException.class, () -> {
-            CsvReader.readAll(fileName);
-        });
+        Exception exception = assertThrows(RuntimeException.class, () -> CsvReader.readAll(fileName));
 
         String expectedMessage = "Error reading CSV file";
         String actualMessage = exception.getMessage();

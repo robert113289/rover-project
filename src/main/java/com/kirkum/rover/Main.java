@@ -15,7 +15,7 @@ import java.util.List;
 public class Main {
 
     public static final String INPUT_FILE_NAME = "reviews.csv";
-    public static String OUTPUT_FILE_NAME = "search_rankings.csv";
+    public static final String OUTPUT_FILE_NAME = "search_rankings.csv";
 
     public static void main(String[] args) {
         String outputFilePath = args.length > 0 ? args[0] : System.getenv().getOrDefault("OUTPUT_FILE_NAME",

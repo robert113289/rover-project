@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.Map;
 
 public class SitterFactory {
-    private Map<String, Sitter> sitterMap = new HashMap<>();
-    private ScoreCalculator scoringStrategy = new ScoreCalculator();
+    private final Map<String, Sitter> sitterMap = new HashMap<>();
+    private final ScoreCalculator scoringStrategy = new ScoreCalculator();
 
     public List<Sitter> createSittersWithScores(List<ReviewCsvRow> reviews) {
         for (ReviewCsvRow row : reviews) {
