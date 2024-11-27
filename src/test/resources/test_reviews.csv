@@ -1,0 +1,3 @@
+rating,sitterImage,endDate,text,ownerImage,dogs,sitter,owner,startDate,sitterPhoneNumber,sitterEmail,ownerPhoneNumber,ownerEmail,responseTimeMinutes
+5,sitterImage1,endDate1,text1,ownerImage1,dogs1,sitter1,owner1,startDate1,sitterPhoneNumber1,sitterEmail1,ownerPhoneNumber1,ownerEmail1,10
+4,sitterImage2,endDate2,text2,ownerImage2,dogs2,sitter2,owner2,startDate2,sitterPhoneNumber2,sitterEmail2,ownerPhoneNumber2,ownerEmail2,20
