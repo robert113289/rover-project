@@ -3,7 +3,7 @@ plugins {
     id("application")
 }
 
-group = "com.kirkum.rover"
+group = "com.rover"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -11,14 +11,8 @@ repositories {
 }
 
 application {
-    mainClass.set("com.kirkum.rover.Main") // Replace with your main class
+    mainClass.set("com.rover.Main")
 }
-
-//tasks.register<JavaExec>("run") {
-//    group = "application"
-//    mainClass.set(application.mainClass)
-//    classpath = sourceSets["main"].runtimeClasspath
-//}
 
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))

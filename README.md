@@ -2,7 +2,7 @@
 
 The application processes review data from `src/main/resources/reviews.csv` and generates sitter rankings,
 which are then exported to a CSV file in the project root directory. I've saved an example output file in the
-root directory called [`search_rankings_kirkum.csv`](./search_rankings_kirkum.csv).
+root directory called [`search_rankings_saved.csv`](./search_rankings_saved.csv).
 
 ## Example
 
@@ -56,6 +56,9 @@ of 10 searches per second.
       auto-scaling to handle peak loads, ensuring the system can scale up or down based on demand.
 
 ### Partial System Architecture
+
+Install mermaid plugin for markdown or visit [Mermaid Live Editor](https://mermaid-js.github.io/mermaid-live-editor/)
+and paste the code below to view the diagram.
 
 ```mermaid
 graph TD;
