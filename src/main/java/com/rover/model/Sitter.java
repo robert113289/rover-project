@@ -26,7 +26,7 @@ public class Sitter {
     }
 
     public List<Review> getReviews() {
-        return reviews;
+        return new ArrayList<>(reviews);
     }
 
     public void addReview(Review review) {

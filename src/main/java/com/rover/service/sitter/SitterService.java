@@ -24,9 +24,7 @@ public class SitterService {
 
     public List<Sitter> getAllSittersOrderedBySearchScore() {
         return getAllSitters().stream().sorted(searchScoreThenName).collect(Collectors.toList());
-
     }
-
 
     public void save(List<Sitter> sitters) {
         sitters.forEach(sitterDao::save);

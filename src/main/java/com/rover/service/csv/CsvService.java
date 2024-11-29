@@ -20,7 +20,6 @@ public class CsvService {
         return reviewCsvDao.findAll();
     }
 
-
     public void exportSearchRankingsToCsv(List<Sitter> sitters) {
         searchRankingsCsvDao.save(sitters);
     }

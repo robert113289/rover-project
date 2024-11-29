@@ -18,12 +18,13 @@ public class Main {
     public static final String OUTPUT_FILE_NAME = "search_rankings.csv";
 
     public static void main(String[] args) {
-        String outputFilePath = args.length > 0 ? args[0] : System.getenv().getOrDefault("OUTPUT_FILE_NAME",
-                OUTPUT_FILE_NAME);
+        String outputFilePath = getOutputFilePath(args);
 
         // EXTRACT
-        CsvService csvService = new CsvService(new ReviewCsvDao(INPUT_FILE_NAME),
-                new SearchRankingsCsvDao(outputFilePath));
+        CsvService csvService = new CsvService(
+                new ReviewCsvDao(INPUT_FILE_NAME),
+                new SearchRankingsCsvDao(outputFilePath)
+        );
         List<ReviewCsvRow> reviews = csvService.extractReviews();
 
         // TRANSFORM
@@ -41,6 +42,12 @@ public class Main {
 
 
         System.out.println("Search Rankings have been exported to " + outputFilePath);
+    }
+
+    private static String getOutputFilePath(String[] args) {
+        String outputFilePath = args.length > 0 ? args[0] : System.getenv().getOrDefault("OUTPUT_FILE_NAME",
+                OUTPUT_FILE_NAME);
+        return outputFilePath;
     }
 
 }

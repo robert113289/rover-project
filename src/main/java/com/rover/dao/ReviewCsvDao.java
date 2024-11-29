@@ -21,9 +21,22 @@ public class ReviewCsvDao {
 
     private ReviewCsvRow toPojo(List<String> row) {
         try {
-            return new ReviewCsvRow(Integer.parseInt(row.get(0)), row.get(1), row.get(2), row.get(3),
-                    row.get(4), row.get(5), row.get(6), row.get(7), row.get(8), row.get(9),
-                    row.get(10), row.get(11), row.get(12), Integer.parseInt(row.get(13)));
+            return new ReviewCsvRow(
+                    Integer.parseInt(row.get(0)),
+                    row.get(1),
+                    row.get(2),
+                    row.get(3),
+                    row.get(4),
+                    row.get(5),
+                    row.get(6),
+                    row.get(7),
+                    row.get(8),
+                    row.get(9),
+                    row.get(10),
+                    row.get(11),
+                    row.get(12),
+                    Integer.parseInt(row.get(13))
+            );
         } catch (IndexOutOfBoundsException | NumberFormatException e) {
             throw new IllegalArgumentException("Invalid CSV row data: " + row, e);
         }

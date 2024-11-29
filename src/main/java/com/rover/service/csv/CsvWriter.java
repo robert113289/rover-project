@@ -5,10 +5,10 @@ import java.io.IOException;
 import java.util.List;
 
 public class CsvWriter {
-    public static void writeToCsv(String fileName, String header, List<String> rows) {
+    public static void writeToCsv(String fileName, String header, List<String> lines) {
         try (FileWriter writer = new FileWriter(fileName)) {
             writer.append(header).append("\n");
-            for (String row : rows) {
+            for (String row : lines) {
                 writer.append(row).append("\n");
             }
         } catch (IOException e) {
