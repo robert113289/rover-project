@@ -1,2 +1,2 @@
-rootProject.name = "Kirkum-Rover-Takehome-Web"
+rootProject.name = "Rover-Takehome-Web"
 
