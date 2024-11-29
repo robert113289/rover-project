@@ -12,10 +12,10 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ScoreCalculatorTest {
+    ScoreCalculator scoreCalculator = new ScoreCalculator();
 
     @Test
     void whenCalculateProfileScore_thenReturnsCalculationBasedOnName() {
-        ScoreCalculator scoreCalculator = new ScoreCalculator();
         double score = scoreCalculator.calculateProfileScore("Leilani R.");
         assertThat(score).isEqualTo(1.15); // 6 distinct letters / 26 * 5 = 1.1538, rounded to 1.15
     }
@@ -29,7 +29,6 @@ public class ScoreCalculatorTest {
                 new Review(5, sitter)
         );
 
-        ScoreCalculator scoreCalculator = new ScoreCalculator();
         double score = scoreCalculator.calculateRatingsScore(reviews);
         assertThat(score).isEqualTo(4.67); // Average of 5, 4, 5 is 4.6666, rounded to 4.67
     }
@@ -53,7 +52,6 @@ public class ScoreCalculatorTest {
             "2.5, 5.0, 12, 5.0", // 10 or more stays, so search score is ratings score
     })
     void whenCalculateSearchScore_thenWeightRatingsScoreHigherAsSitterGetsMoreReviews(double profileScore, double ratingsScore, int numberOfStays, double expectedScore) {
-        ScoreCalculator scoreCalculator = new ScoreCalculator();
         double searchScore = scoreCalculator.calculateSearchScore(profileScore, ratingsScore, numberOfStays);
         assertThat(searchScore).isEqualTo(expectedScore);
     }
