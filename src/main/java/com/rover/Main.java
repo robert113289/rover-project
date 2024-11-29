@@ -45,9 +45,7 @@ public class Main {
     }
 
     private static String getOutputFilePath(String[] args) {
-        String outputFilePath = args.length > 0 ? args[0] : System.getenv().getOrDefault("OUTPUT_FILE_NAME",
-                OUTPUT_FILE_NAME);
-        return outputFilePath;
+        return args.length > 0 ? args[0] : System.getenv().getOrDefault("OUTPUT_FILE_NAME", OUTPUT_FILE_NAME);
     }
 
 }
